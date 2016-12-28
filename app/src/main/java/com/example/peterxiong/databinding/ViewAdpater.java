@@ -1,6 +1,7 @@
 package com.example.peterxiong.databinding;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,18 +19,24 @@ public class ViewAdpater extends RecyclerView.Adapter {
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        /*
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, null);
         return new UserViewHolder(v);
+        */
+        return UserHolder.create(LayoutInflater.from(parent.getContext()), parent);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        /*
         UserViewHolder userViewHolder = (UserViewHolder)holder;
         if (userViewHolder == null)
             return;
         User user = users.get(position);
         userViewHolder.firstName.setText(user.getFirstName());
         userViewHolder.lastName.setText(user.getLastName());
+        */
+        ((UserHolder)holder).bindTo(users.get(position));
     }
 
     @Override

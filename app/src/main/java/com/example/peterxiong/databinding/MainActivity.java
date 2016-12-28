@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        binding.rv.setLayoutManager(layoutManager);
-
+//        binding.rv.setLayoutManager(layoutManager);
+        binding.setLayoutmanager(layoutManager);
         ArrayList<User> users = new ArrayList<>();
-        users.add(new User("aaaaaa", "11111111"));
         users.add(new User("bbbbbbb", "222222"));
+        users.add(new User("aaaaaa", "11111111"));
         ViewAdpater adapter = new ViewAdpater(users);
-
-        binding.rv.setAdapter(adapter);
+        binding.setAdapter(adapter);
+//        binding.rv.setAdapter(adapter);
 
     }
 }
